@@ -81,8 +81,12 @@ header #headerArea {
     color: blue; /* white*/
     display: flex;
     /*justify-content: center;
-    align-items: center;*/
-    flex-direction: row;
+    align-items: center;
+    flex-direction: row;*/
+}
+
+#mainImgArea img {
+    display:grid;
 }
 
 #pageSection {
