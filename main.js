@@ -26,11 +26,11 @@ btn.addEventListener("click", async function () {
 
         for (let i = 0; i < data.photos.photo.length; i++){
 
-            let farmId = myArr.photos.photo[i].farm;
+            let farmId = data.photos.photo[i].farm;
             let serverId = data.photos.photo[i].server;
             let photoId = data.photos.photo[i].id;
             let secret = data.photos.photo[i].secret;
-            let imgURL = `https://farm${farmId}.staticflickr.com/${serverId}/${photoId}_${secret}_m.jpg`; // [mstzb]   https://farm${farmId}.staticflickr.com/${serverId}/${photoId}_${secret}_m.jpg
+            let imgURL = `https://live.staticflickr.com/${serverId}/${photoId}_${secret}_m.jpg`; // [mstzb]   https://farm${farmId}.staticflickr.com/${serverId}/${photoId}_${secret}_m.jpg
             // https://live.staticflickr.com/${serverId}/${photoId}_${secret}_m.jpg
             createImage(imgURL);
             //let img = document.createElement("img")
@@ -41,13 +41,14 @@ btn.addEventListener("click", async function () {
 
     function createImage(imgURL) {
         console.log("hrj");
-        //const imageSection = document.getElementById('gallerySection');
-        let img = document.createElement("img");
+        const imageSection = document.getElementById("mainImgArea");
+        let img = document.createElement('img');
         console.log("here we go");
         img.setAttribute("src", imgURL);
-        img.textContent = "hej";
+        img.src = imgURL;
         console.log(img.src);
-        document.querySelector("main").appendChild(img); // getElementById("main")
+        imageSection.innerHTML = "<img src=" + "&#34" + imgURL + "&#34" + "></img>";
+        imageSection.appendChild(img); // getElementById("main")
         console.log("im going crazy");
     }
 
