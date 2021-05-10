@@ -1,6 +1,11 @@
 body {
     background-color: grey; /* white*/
     font-family: 'Raleway', sans-serif;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
 }
 
 .indexHome {
@@ -10,6 +15,17 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    gap: 0.5rem;
+}
+
+.sideStuff {
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    margin: auto;
 }
 
 /* HEADER AREA */
@@ -20,6 +36,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: 25px;
 }
 
 header #headerArea {
@@ -31,6 +48,7 @@ header #headerArea {
     flex-direction: row;
     align-items: center;
     gap: 1rem;
+    border-radius: 25px;
 }
 
 #searchText {
@@ -41,6 +59,7 @@ header #headerArea {
     max-height: 50%;
     height: 1.3vw;
     width: 20vw;
+    border-radius: 25px;
 }
 
 .searchBtn {
@@ -51,6 +70,12 @@ header #headerArea {
     max-height: 50%;
     height: 1.7vw;
     width: 10vw;
+    border-radius: 25px;
+}
+
+.searchBtn:hover {
+    background-color: gray;
+    color: white;
 }
 
 /* IMG/BODY/MAIN AREA */
@@ -65,16 +90,18 @@ header #headerArea {
     justify-content: flex-start;
     align-items: center;
     flex-direction: column;
+    border-radius: 25px;
 }
 
 .imgArea main {
+    background-image: url("img/galleryphoto.jpg");
     background-color: whitesmoke;
     max-width: 100%;
     max-height: 100%;
     width: 46.5vw;
-    height: 750px;
+    height: 735px;
     color: blue; /* white  width: 60vw;*/
-    flex:1;
+    flex: 1;
     padding-top: 5px;
     padding-bottom: 5px;
 }
@@ -96,6 +123,12 @@ header #headerArea {
 .imgBtn {
     height: 1.7vw;
     width: 10vw;
+    border-radius: 25px;
+}
+
+.imgBtn:hover {
+    background-color: gray;
+    color: white;
 }
 
 /* LIGHTBOX AREA */
@@ -103,6 +136,7 @@ header #headerArea {
 #lightbox {
     display: none;
     position: fixed;
+    border-radius: 25px;
     /*z-index: 1;
     /*padding: 10px 62px 0px 62px;
     left: 50%;
@@ -111,19 +145,35 @@ header #headerArea {
     margin-right: auto;
     /*margin-top: -50px;
     margin-left: -100px;*/
-    background: transparent;
+    background-color: lightyellow;
     /*overflow: auto;
-    background: transparent;
+    background: transparent;*/
     justify-content: center;
-    align-items: center;*/
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+#lightboxPtag {
+    background-color: lightgrey;
+    height: 40px;
+    max-width: 100%;
+    color: red;
+}
+
+#lightboxImg {
+    background-color: red;
+    padding: 5px;
 }
 
 /* FOOTER AREA */
 
 .footerArea {
-    background-color: green;
+    background-color: red;
+    color: white;
     width: 46.5vw;
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: 25px;
 }
