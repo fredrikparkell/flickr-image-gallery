@@ -6,7 +6,7 @@ btn.addEventListener("click", async function () {
     const apiKey = "api_key=0beca48521ee0ee70915815ea49063f4";
     const searchText = document.getElementById("searchText").value;
     const text = "text=" + searchText;
-    const query = "sort=date-taken-asc&per_page=10&format=json&nojsoncallback=1"; // nojsoncallback=1
+    const query = "sort=date-taken-asc&per_page=20&format=json&nojsoncallback=1"; // nojsoncallback=1
     const flickrURL = `https://api.flickr.com/services/rest/?method=flickr.photos.search&${apiKey}&${text}&${query}`; // api.flickr.com || www.flickr.com
 
     console.log(searchText)
@@ -59,7 +59,7 @@ async function talkToFlickr(flickrURL) {
         let serverId = data.photos.photo[i].server;
         let photoId = data.photos.photo[i].id;
         let secret = data.photos.photo[i].secret;
-        let imgURL = `https://live.staticflickr.com/${serverId}/${photoId}_${secret}_s.jpg`; // [mstzb]   https://farm${farmId}.staticflickr.com/${serverId}/${photoId}_${secret}_m.jpg
+        let imgURL = `https://live.staticflickr.com/${serverId}/${photoId}_${secret}_q.jpg`; // [mstzb]   https://farm${farmId}.staticflickr.com/${serverId}/${photoId}_${secret}_m.jpg
         // https://live.staticflickr.com/${serverId}/${photoId}_${secret}_m.jpg
         createImage(imgURL);
     }
