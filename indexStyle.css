@@ -41,8 +41,7 @@ header {
 
 header #headerArea {
     background-image: linear-gradient(to left bottom, #000000, #020202, #040403, #050505, #070707, #080808, #090909, #0a0a0a, #0b0b0b, #0c0c0c, #0c0c0c, #0d0d0d);
-    /*background-color: black;*/
-    width: 46.5vw;
+    width: 785px; /* 650px */
     color: white;
     display: flex;
     justify-content: center;
@@ -52,25 +51,30 @@ header #headerArea {
     border-radius: 10px;
 }
 
+#headerh1 {
+    padding-left: 10px;
+    /*font-size: large;*/
+}
+
 #searchText {
     font-family: 'Raleway', sans-serif;
     color: black;
     outline: none;
     max-width: 100%;
     max-height: 50%;
-    height: 1.3vw;
+    height: 20px;
     width: 20vw;
     border-radius: 10px;
 }
 
 .searchBtn {
     font-family: 'Raleway', sans-serif;
-    font-size: 1vw;
+    font-size: 15px;
     color: black;
     max-width: 100%;
     max-height: 50%;
-    height: 1.7vw;
-    width: 10vw;
+    height: 25px;
+    width: 140px; /* 10vw */
     border-radius: 10px;
 }
 
@@ -84,7 +88,7 @@ header #headerArea {
 .imgArea {
     background-color:rgb(41, 41, 39);
     max-width: 100%;
-    width: 46.5vw;
+    width: 785px; /* 650px */
     height: 720px;
     color: white;
     display: flex;
@@ -100,7 +104,7 @@ header #headerArea {
     background-size: 785px 650px;
     max-width: 100%;
     max-height: 100%;
-    width: 46.5vw;
+    width: 785px; /* 650px */
     height: 720px; /* 735 */
     color: blue; /* white  width: 60vw;*/
     flex: 1;
@@ -123,7 +127,7 @@ header #headerArea {
 }
 
 .imgBtn {
-    height: 1.7vw;
+    height: 25px; /* 1.7vw */
     width: 10vw;
     border-radius: 10px;
 }
@@ -139,10 +143,6 @@ header #headerArea {
     display: none;
     position: fixed;
     border-radius: 10px;
-    /*z-index: 1;
-    /*padding: 10px 62px 0px 62px;
-    left: 50%;
-    top: 50%;*/
     margin-left: auto;
     margin-right: auto;
     /*margin-top: -50px;
@@ -171,17 +171,127 @@ header #headerArea {
     padding: 5px;
     margin-bottom: 0;
     border-radius: 10px;
+    max-width: 100%;
+    height: auto;
 }
 
 /* FOOTER AREA */
 
 .footerArea {
     background-image: linear-gradient(to left bottom, #000000, #020202, #040403, #050505, #070707, #080808, #090909, #0a0a0a, #0b0b0b, #0c0c0c, #0c0c0c, #0d0d0d);
-    /*background-color: black;*/
     color: white;
-    width: 46.5vw;
+    width: 785px; /* 650px */
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 10px;
+}
+
+/*@media only screen and (max-width: 1670px) {
+    
+}
+
+@media only screen and (max-width: 1095px) {
+    
+}
+
+@media only screen and (max-width: 910px) {
+    
+}*/
+
+@media only screen and (max-width: 820px) and (min-width: 280px) {
+    
+    header #headerArea {
+        width: 500px;
+        gap: 3rem;
+    }
+
+    #headerh1 {
+        font-size: medium;
+    }
+
+    #searchText {
+        /*height: 2.3vw;*/
+        width: 120px; /* 20vw*/
+    }
+    
+    .searchBtn {
+        font-size: 10px;
+        height: 25px;
+    }
+
+    #lightbox {
+        width: 300px;
+    }
+
+    #lightboxImg {
+        width: 90%;
+    }
+
+    .imgArea {
+        width: 500px;
+        height: 720px; /* 580px */
+    }
+
+    .imgArea main {
+        width: 500px;
+        height: 710px; /* 570px */
+    }
+
+    #mainImgArea img {
+        width: 119px;
+        height: 119px;
+    }
+
+    #pageSection {
+        font-size: small;
+    }
+    
+    .imgBtn {
+        font-size: 10px;
+        height: 25px;
+    }
+
+    .footerArea {
+        width: 500px;
+    }
+}
+
+@media only screen and (max-width: 280px) {
+
+    header #headerArea {
+        width: 500px;
+    }
+
+    #headerh1 {
+        font-size: small;
+    }
+
+    #mainImgArea img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .imgArea {
+        width: 500px;
+        height: 580px;
+    }
+
+    .imgArea main {
+        width: 500px;
+        height: 570px;
+    }
+
+    #pageSection {
+        font-size: small;
+    }
+    
+    .imgBtn {
+        font-size: 10px;
+        height: 25px;
+    }
+
+    .footerArea {
+        width: 500px;
+    }
 }
