@@ -6,6 +6,10 @@
 
 // GLOBAL SCOPE VARIABLES //
 
+document.getElementById('headerh1').addEventListener("click", async function () {
+    location.reload();
+})
+
 document.querySelector(".searchBtn").addEventListener("click", async function () {
     currentPage = 1;
     loadImages();
@@ -71,7 +75,7 @@ document.getElementById('imgBtnPrev').addEventListener("click", async function (
         currentPage--;
         loadImages();
     }
-    // else some felmeddelande
+    // else some felmeddelande?
 })
 
 document.getElementById('imgBtnNext').addEventListener("click", async function () {
@@ -79,5 +83,5 @@ document.getElementById('imgBtnNext').addEventListener("click", async function (
         currentPage++;
         loadImages();
     }
-    // else some felmeddelande
+    // else some felmeddelande?
 })
