@@ -18,7 +18,7 @@ function loadImages() {
     if (searchText == "") {location.reload();}
     else {
     const text = "text=" + searchText;
-    const query = "sort=date-taken-asc&per_page=20&format=json&nojsoncallback=1" + `&page=${currentPage}`; // nojsoncallback=1 // per_page=20
+    const query = "sort=relevance-asc&per_page=20&format=json&nojsoncallback=1" + `&page=${currentPage}`; // nojsoncallback=1 // per_page=20
     const flickrURL = `https://api.flickr.com/services/rest/?method=flickr.photos.search&${apiKey}&${text}&${query}`;
     talkToFlickr(flickrURL);
     }
