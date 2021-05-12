@@ -19,7 +19,7 @@ function loadImages() {
     imageSection.innerHTML = "";
     const apiKey = "api_key=0beca48521ee0ee70915815ea49063f4";
     const searchText = document.getElementById("searchText").value;
-    if (searchText == "") {location.reload();}
+    if (searchText == "") {location.reload();} // lägga till felmeddelande
     else {
     const text = "text=" + searchText;
     const query = "sort=relevance-asc&per_page=20&format=json&nojsoncallback=1" + `&page=${currentPage}`; // nojsoncallback=1 // per_page=20
