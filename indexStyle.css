@@ -246,6 +246,20 @@ header #belowHeader {
         gap: 3rem;
     }
 
+    header #belowHeader {
+        width: 500px;
+    }
+
+    #sortByText {
+        font-size: small;
+    }
+    
+    #belowHeader label, #belowHeader input {
+        font-size: small;
+        margin-top: 0;
+        margin-bottom: 15px;
+    }
+
     #headerh1 {
         font-size: medium;
     }
@@ -266,6 +280,10 @@ header #belowHeader {
 
     #lightboxImg {
         width: 90%;
+    }
+
+    #lightboxPtag {
+        font-size: small;
     }
 
     .imgArea {
@@ -295,31 +313,81 @@ header #belowHeader {
     .footerArea {
         width: 500px;
     }
+
+    #iconHolder p {
+        margin-bottom: 0;
+        font-size: small;
+    }
+    
+    #iconHolder {
+        gap: 5rem; /* 5rem */
+    }
 }
 
 @media only screen and (max-width: 320px) {
 
     header #headerArea {
-        width: 500px;
+        width: 300px;
+    }
+
+    header #belowHeader {
+        width: 300px;
+        gap: 0.2rem;
+    }
+
+    #sortByText {
+        font-size: xx-small;
+    }
+    
+    #belowHeader label, #belowHeader input {
+        font-size: xx-small;
     }
 
     #headerh1 {
         font-size: small;
     }
 
+    #searchText {
+        /*height: 2.3vw;*/
+        width: 90px; /* 20vw*/
+        height: 15px;
+    }
+    
+    .searchBtn {
+        font-size: 8px;
+        height: 20px;
+        width: 70px;
+    }
+
+    #lightbox {
+        width: 180px;
+    }
+
+    #lightboxImg {
+        width: 90%;
+    }
+
+    #lightboxPtag {
+        font-size: xx-small;
+    }
+
+    #searchResults {
+        font-size:small;
+    }
+
     #mainImgArea img {
-        width: 40px;
-        height: 40px;
+        width: 69px;
+        height: 69px;
     }
 
     .imgArea {
-        width: 500px;
-        height: 580px;
+        width: 300px;
+        height: 465px;
     }
 
     .imgArea main {
-        width: 500px;
-        height: 570px;
+        width: 300px;
+        height: 430px;
     }
 
     #pageSection {
@@ -328,10 +396,25 @@ header #belowHeader {
     
     .imgBtn {
         font-size: 10px;
-        height: 25px;
+        height: 30px;
+        width: 40px;
     }
 
     .footerArea {
-        width: 500px;
+        width: 300px;
+        height: 100px;
+    }
+
+    #iconHolder p {
+        font-size: xx-small;
+    }
+    
+    #iconHolder {
+        gap: 1.5rem; /* 5rem */
+    }
+
+    #iconHolder img {
+        width: 40px;
+        height: 40px;
     }
 }
