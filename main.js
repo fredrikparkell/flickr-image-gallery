@@ -28,12 +28,25 @@ document.querySelector(".searchBtn").addEventListener("click", async function ()
     loadImages();
 })
 
+document.addEventListener('keydown', async function (event) {
+    if(event.key === 'Enter') {
+        document.querySelector(".searchBtn").click();
+    }
+    else if(event.key === 'ArrowLeft') {
+        document.getElementById('imgBtnPrev').click();
+    }
+    else if(event.key === 'ArrowRight') {
+        document.getElementById('imgBtnNext').click();
+    }
+})
+
 //--------------------------------//
 
 // FUNCTION-FLOW FOR HANDLING IMAGES //
 
 function loadImages() {
     imageSection.innerHTML = "";
+    document.getElementById('lightbox').style.display = "none";
     const apiKey = "api_key=0beca48521ee0ee70915815ea49063f4";
     const searchText = document.getElementById("searchText").value;
     if (searchText == "") {

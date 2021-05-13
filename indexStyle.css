@@ -324,23 +324,24 @@ header #belowHeader {
     }
 }
 
-@media only screen and (max-width: 320px) {
+@media only screen and (max-width: 420px) {
 
     header #headerArea {
-        width: 300px;
+        width: 270px; 
+        gap: 0.3rem;
     }
 
     header #belowHeader {
-        width: 300px;
-        gap: 0.2rem;
+        width: 270px; 
+        gap: 0.1rem;
     }
 
     #sortByText {
-        font-size: xx-small;
+        font-size: 7px;
     }
     
     #belowHeader label, #belowHeader input {
-        font-size: xx-small;
+        font-size: 7px;
     }
 
     #headerh1 {
@@ -348,23 +349,24 @@ header #belowHeader {
     }
 
     #searchText {
-        /*height: 2.3vw;*/
-        width: 90px; /* 20vw*/
+        width: 100px;
         height: 15px;
     }
     
     .searchBtn {
         font-size: 8px;
         height: 20px;
-        width: 70px;
+        width: 80px;
     }
 
     #lightbox {
-        width: 180px;
+        width: 230px;
+        height: 300px;
     }
 
     #lightboxImg {
         width: 90%;
+        max-height: 90%;
     }
 
     #lightboxPtag {
@@ -372,36 +374,37 @@ header #belowHeader {
     }
 
     #searchResults {
-        font-size:small;
+        font-size:x-small;
     }
 
     #mainImgArea img {
-        width: 69px;
-        height: 69px;
+        width: 83px;
+        height: 83px;
     }
 
     .imgArea {
-        width: 300px;
-        height: 465px;
+        width: 270px; 
+        height: 690px;
     }
 
     .imgArea main {
-        width: 300px;
-        height: 430px;
+        width: 270px; 
+        height: 600px;
     }
 
     #pageSection {
         font-size: small;
+        gap: 3rem;
     }
-    
+
     .imgBtn {
-        font-size: 10px;
+        font-size: 8px;
         height: 30px;
-        width: 40px;
+        width: 30px;
     }
 
     .footerArea {
-        width: 300px;
+        width: 270px; 
         height: 100px;
     }
 
