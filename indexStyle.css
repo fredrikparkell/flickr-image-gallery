@@ -209,8 +209,16 @@ header #belowHeader {
     border-radius: 10px;
 }
 
-.footerArea h3 {
-    margin-top: 0;
+#iconHolder a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 0;
+}
+
+#iconHolder p {
+    margin-bottom: 0;
 }
 
 #iconHolder {
@@ -219,12 +227,12 @@ header #belowHeader {
     justify-content: center;
     align-items: center;
     flex-direction: row;
-    gap: 1rem;
+    gap: 10rem; /* 5rem */
 }
 
 #iconHolder img {
-    width: 40px;
-    height: 40px;
+    width: 50px; /* 40px */
+    height: 50px;
     background: black;
     border-radius: 30px;
 }
