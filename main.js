@@ -103,6 +103,7 @@ function createImage(imgURL, imgTitle) {
     imageSection.appendChild(newImg);
 
     newImg.addEventListener("click", async function () {
+        document.getElementById('boxModal').style.display = "block";
         document.getElementById('lightbox').style.display = "block";
         let bigSrc = newImg.src.replace('q.jpg', 'z.jpg');
         document.getElementById('lightboxPtag').innerText = newImg.title;
@@ -114,7 +115,8 @@ function createImage(imgURL, imgTitle) {
 
 // EVENT LISTENERS FOR LIGHTBOX //
 
-document.getElementById('lightbox').addEventListener("click", async function () {
+document.getElementById('boxModal').addEventListener("click", async function () {
+    document.getElementById('boxModal').style.display = "none";
     document.getElementById('lightbox').style.display = "none";
 })
 
