@@ -18,24 +18,15 @@ body {
     gap: 0.5rem;
 }
 
-.sideStuff {
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    flex-direction: column;
-    margin: auto;
-}
-
 /* HEADER AREA */
 
 header {
-    background-color: blue;
+    background-image: linear-gradient(to left bottom, #000000, #020202, #040403, #050505, #070707, #080808, #090909, #0a0a0a, #0b0b0b, #0c0c0c, #0c0c0c, #0d0d0d);
     max-width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     border-radius: 10px;
 }
 
@@ -53,7 +44,25 @@ header #headerArea {
 
 #headerh1 {
     padding-left: 10px;
-    /*font-size: large;*/
+}
+
+header #belowHeader {
+    width: 785px; /* 650px */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+#sortByText {
+    color: white;
+    margin-top: 0;
+}
+
+#belowHeader label, #belowHeader input {
+    color: white;
+    margin-top: 0;
+    margin-bottom: 15px;
 }
 
 #searchText {
@@ -76,6 +85,8 @@ header #headerArea {
     height: 25px;
     width: 140px; /* 10vw */
     border-radius: 10px;
+    background-color: gray;
+    color: white;
 }
 
 .searchBtn:hover {
@@ -84,6 +95,13 @@ header #headerArea {
 }
 
 /* IMG/BODY/MAIN AREA */
+
+.resultsBar {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+}
 
 .imgArea {
     background-color:rgb(41, 41, 39);
@@ -130,6 +148,8 @@ header #headerArea {
     height: 25px; /* 1.7vw */
     width: 10vw;
     border-radius: 10px;
+    background-color: gray;
+    color: white;
 }
 
 .imgBtn:hover {
@@ -187,17 +207,7 @@ header #headerArea {
     border-radius: 10px;
 }
 
-/*@media only screen and (max-width: 1670px) {
-    
-}
-
-@media only screen and (max-width: 1095px) {
-    
-}
-
-@media only screen and (max-width: 910px) {
-    
-}*/
+/* MEDIA-QUERY AREA */
 
 @media only screen and (max-width: 820px) and (min-width: 320px) {
     

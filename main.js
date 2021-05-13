@@ -4,10 +4,23 @@
     let totalPages = 0;
     const imageSection = document.getElementById('mainImgArea');
 
-// GLOBAL SCOPE VARIABLES //
+//--------------------------------//
+
+// EVENT LISTENERS FOR HEADER TAGS //
 
 document.getElementById('headerh1').addEventListener("click", async function () {
     location.reload();
+})
+
+document.getElementById('searchText').addEventListener("input", async function () {
+    if(this.value != "") {
+        document.querySelector(".searchBtn").style.backgroundColor = 'white';
+        document.querySelector(".searchBtn").style.color = 'black';
+    }
+    else {
+        document.querySelector(".searchBtn").style.backgroundColor = 'gray';
+        document.querySelector(".searchBtn").style.color = 'white';
+    }
 })
 
 document.querySelector(".searchBtn").addEventListener("click", async function () {
@@ -15,21 +28,36 @@ document.querySelector(".searchBtn").addEventListener("click", async function ()
     loadImages();
 })
 
+//--------------------------------//
+
+// FUNCTION-FLOW FOR HANDLING IMAGES //
+
 function loadImages() {
     imageSection.innerHTML = "";
     const apiKey = "api_key=0beca48521ee0ee70915815ea49063f4";
     const searchText = document.getElementById("searchText").value;
-    if (searchText == "") {location.reload();} // lägga till felmeddelande
+    if (searchText == "") {
+        document.querySelector(".searchBtn").style.backgroundColor = 'red';
+        setTimeout(function() { document.querySelector(".searchBtn").style.backgroundColor = 'gray'; }, 200);
+        document.getElementById('searchResults').innerText = `Please enter something in the searchbox`;
+        document.getElementById('pageCounter').innerText = `0 of 0`;
+        document.getElementById('imgBtnNext').style.backgroundColor = 'gray';
+        document.getElementById('imgBtnNext').style.color = 'white';
+        document.getElementById('imgBtnPrev').style.backgroundColor = 'gray';
+        document.getElementById('imgBtnPrev').style.color = 'white';
+        totalPages = 0;
+        currentPage = 1;
+    }
     else {
     const text = "text=" + searchText;
-    const query = "sort=relevance-asc&per_page=20&format=json&nojsoncallback=1" + `&page=${currentPage}`; // nojsoncallback=1 // per_page=20
+    let sortOption = document.querySelector('input[name="sortOrder"]:checked').value;
+    const query = `sort=${sortOption}-desc` + "&per_page=20&format=json&nojsoncallback=1" + `&page=${currentPage}`;
     const flickrURL = `https://api.flickr.com/services/rest/?method=flickr.photos.search&${apiKey}&${text}&${query}`;
     talkToFlickr(flickrURL);
     }
 }
 
 async function talkToFlickr(flickrURL) {
-        console.log(flickrURL) // ska ta bort
         const response = await fetch(flickrURL);
         const data = await response.json();
         totalPages = data.photos.pages;
@@ -37,17 +65,20 @@ async function talkToFlickr(flickrURL) {
         if (totalPages == 0) {document.getElementById('pageCounter').innerText = `0 of ${totalPages}`;}
         else {
             document.getElementById('pageCounter').innerText = `${currentPage} of ${totalPages}`;
+            if (totalPages > 1) {
+                document.getElementById('imgBtnNext').style.backgroundColor = 'white';
+                document.getElementById('imgBtnNext').style.color = 'black';
+            }
             loopData(data);
         }
 }
 
 function loopData(data) {
     for (let i = 0; i < data.photos.photo.length; i++){
-        //let farmId = data.photos.photo[i].farm; // https://live.staticflickr.com/${serverId}/${photoId}_${secret}_m.jpg
         let serverId = data.photos.photo[i].server;
         let photoId = data.photos.photo[i].id;
         let secret = data.photos.photo[i].secret;
-        let imgURL = `https://live.staticflickr.com/${serverId}/${photoId}_${secret}_q.jpg`; // https://farm${farmId}.staticflickr.com/${serverId}/${photoId}_${secret}_m.jpg
+        let imgURL = `https://live.staticflickr.com/${serverId}/${photoId}_${secret}_q.jpg`;
         createImage(imgURL, data.photos.photo[i].title);
     }
 }
@@ -66,22 +97,46 @@ function createImage(imgURL, imgTitle) {
     })
 }
 
+//--------------------------------//
+
+// EVENT LISTENERS FOR LIGHTBOX //
+
 document.getElementById('lightbox').addEventListener("click", async function () {
     document.getElementById('lightbox').style.display = "none";
 })
 
-document.getElementById('imgBtnPrev').addEventListener("click", async function () { // pageCounter
+//--------------------------------//
+
+// EVENT LISTENERS FOR PAGE-BUTTONS //
+
+document.getElementById('imgBtnPrev').addEventListener("click", async function () {
     if (currentPage > 1){
         currentPage--;
+        if(currentPage == 1) {
+            document.getElementById('imgBtnPrev').style.backgroundColor = 'gray';
+            document.getElementById('imgBtnPrev').style.color = 'white';
+        }
         loadImages();
     }
-    // else some felmeddelande?
+    else {
+        document.getElementById('imgBtnPrev').style.backgroundColor = 'red';
+        setTimeout(function() { document.getElementById('imgBtnPrev').style.backgroundColor = 'gray'; }, 200);
+    }
 })
 
 document.getElementById('imgBtnNext').addEventListener("click", async function () {
     if (currentPage < totalPages){
         currentPage++;
+        if (currentPage > 1) {
+            document.getElementById('imgBtnPrev').style.backgroundColor = 'white';
+            document.getElementById('imgBtnPrev').style.color = 'black';
+        }
         loadImages();
     }
-    // else some felmeddelande?
+    else {
+        document.getElementById('imgBtnNext').style.backgroundColor = 'red';
+        setTimeout(function() { document.getElementById('imgBtnNext').style.backgroundColor = 'gray'; }, 200);
+    }
 })
+
+//--------------------------------//

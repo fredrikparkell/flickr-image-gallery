@@ -10,25 +10,23 @@
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="sideStuff">
-    <!--<h2>FLICKR</h2>
-        <h2>FLICKR</h2>
-        <h2>FLICKR</h2>
-        <h2>FLICKR</h2>
-        <h2>FLICKR</h2>
-        <h2>FLICKR</h2>
-        <h2>FLICKR</h2>
-        <h2>FLICKR</h2>
-        <h2>FLICKR</h2>-->
-    </div>
     <div class="indexHome">
         
         <!--HEADER-->
         <header>
             <div id="headerArea">
-            <h1 id="headerh1">Image Gallery</h1>
-            <input type="text" id="searchText" name="sText" placeholder="Search text here..">
-            <button class="searchBtn">Get images</button>
+                <h1 id="headerh1">Image Gallery</h1>
+                <input type="text" id="searchText" name="sText" placeholder="Search text here..">
+                <button class="searchBtn">Get images</button>
+            </div>
+            <div id="belowHeader">
+                <p id="sortByText">Sort search by:</p>
+                <input type="radio" id="relevance" name="sortOrder" value="relevance" checked>
+                <label for="relevance">Relevance</label>
+                <input type="radio" id="datePosted" name="sortOrder" value="date-posted">
+                <label for="datePosted">Date Posted</label>
+                <input type="radio" id="dateTaken" name="sortOrder" value="date-taken">
+                <label for="dateTaken">Date Taken</label>
             </div>
         </header>
 
@@ -49,23 +47,12 @@
         <div id="lightbox" class="modal">
             <h3 id="lightboxPtag"></h3>
             <img id="lightboxImg" src="">
-        </div>    
+        </div>   
 
         <!--FOOTER-->
         <footer class="footerArea">
             <p>hej this is my footer</p>
         </footer>
-    </div>
-    <div class="sideStuff">
-    <!--<h2>FLICKR</h2>
-        <h2>FLICKR</h2>
-        <h2>FLICKR</h2>
-        <h2>FLICKR</h2>
-        <h2>FLICKR</h2>
-        <h2>FLICKR</h2>
-        <h2>FLICKR</h2>
-        <h2>FLICKR</h2>
-        <h2>FLICKR</h2>-->
     </div>
     <script src="main.js"></script>
 </body>
