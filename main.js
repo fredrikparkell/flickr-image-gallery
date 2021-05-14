@@ -62,6 +62,10 @@ function loadImages() {
         currentPage = 1;
     }
     else {
+        if(currentPage == 1) {
+            document.getElementById('imgBtnPrev').style.backgroundColor = 'gray';
+            document.getElementById('imgBtnPrev').style.color = 'white';
+        }
     const text = "text=" + searchText;
     let sortOption = document.querySelector('input[name="sortOrder"]:checked').value;
     const query = `sort=${sortOption}-desc` + "&per_page=20&format=json&nojsoncallback=1" + `&page=${currentPage}`;
@@ -79,8 +83,14 @@ async function talkToFlickr(flickrURL) {
         else {
             document.getElementById('pageCounter').innerText = `${currentPage} of ${totalPages}`;
             if (totalPages > 1) {
-                document.getElementById('imgBtnNext').style.backgroundColor = 'white';
-                document.getElementById('imgBtnNext').style.color = 'black';
+                if (currentPage == totalPages){
+                    document.getElementById('imgBtnNext').style.backgroundColor = 'gray';
+                    document.getElementById('imgBtnNext').style.color = 'white';
+                }
+                else {
+                    document.getElementById('imgBtnNext').style.backgroundColor = 'white';
+                    document.getElementById('imgBtnNext').style.color = 'black';
+                }
             }
             loopData(data);
         }
